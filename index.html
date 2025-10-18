@@ -1,18 +1,15 @@
 <!doctype html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PDF Перегляд</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDF Viewer Fullscreen</title>
   <style>
-    body{font-family:system-ui,Arial,sans-serif;background:#f8fafc;margin:20px;text-align:center;color:#1e293b}
-    h1{font-size:1.4rem;margin-bottom:1rem}
-    canvas{margin-top:16px;max-width:90vw;border:1px solid #e2e8f0;background:#fff}
+    html, body { margin:0; padding:0; height:100%; background:black; }
+    canvas { display:block; margin:0 auto; width:100%; height:auto; }
   </style>
 </head>
 <body>
-  <h1>Переглядач PDF</h1>
-  <p>Автоматично відкривається файл <b>example.pdf</b> із кореня репозиторію.</p>
   <canvas id="pdfCanvas"></canvas>
 
   <script src="https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.min.js"></script>
@@ -25,15 +22,24 @@
     async function renderPdf(url){
       const pdfDoc = await pdfjsLib.getDocument(url).promise;
       const page = await pdfDoc.getPage(1);
-      const viewport = page.getViewport({scale: 1.2});
-      canvas.width = viewport.width;
-      canvas.height = viewport.height;
-      await page.render({canvasContext: ctx, viewport}).promise;
+
+      // Масштаб для чіткої якості на всю ширину
+      const viewport = page.getViewport({ scale: 1 });
+      const scale = window.innerWidth / viewport.width;
+      const scaledViewport = page.getViewport({ scale });
+
+      canvas.width = scaledViewport.width;
+      canvas.height = scaledViewport.height;
+
+      await page.render({ canvasContext: ctx, viewport: scaledViewport }).promise;
     }
 
-    // автоматично підвантажує PDF із кореня репозиторію
-    renderPdf('example.pdf').catch(err => {
-      document.body.insertAdjacentHTML('beforeend', `<p style="color:red">Помилка: ${err.message}</p>`);
+    // PDF з кореня репозиторію
+    renderPdf('example.pdf');
+
+    // Перерендер при зміні розміру вікна для чіткості
+    window.addEventListener('resize', ()=>{
+      renderPdf('example.pdf');
     });
   </script>
 </body>
