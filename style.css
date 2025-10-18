@@ -1,0 +1,297 @@
+.a {
+  background-color: #b7b89f;
+  width: 100%;
+  min-width: 595px;
+  min-height: 842px;
+  position: relative;
+}
+
+.a .frame {
+  position: absolute;
+  top: 0;
+  left: 167px;
+  width: 428px;
+  height: 202px;
+  display: flex;
+  background-color: #777c6d;
+}
+
+.a .text-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 65px;
+  width: 337px;
+  height: 59px;
+  margin-left: 52px;
+  font-family: "Montserrat-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.a .div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 167px;
+  height: 842px;
+  display: flex;
+  flex-direction: column;
+  background-color: #777c6d;
+}
+
+.a .frame-2 {
+  margin-left: 15px;
+  width: 134px;
+  height: 180px;
+  margin-top: 7px;
+  background-image: url(./img/frame-4.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.a .text-wrapper-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 11px;
+  width: 101px;
+  height: 17px;
+  margin-top: 32px;
+  font-family: "Montserrat-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.a .text-wrapper-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 11px;
+  width: 72px;
+  height: 12px;
+  margin-top: 10px;
+  font-family: "Montserrat-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.a .text-wrapper-4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 11px;
+  width: 146px;
+  height: 12px;
+  margin-top: 10px;
+  font-family: "Montserrat-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.a .b-rmannstr-m {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 11px;
+  width: 79px;
+  height: 24px;
+  margin-top: 10px;
+  font-family: "Montserrat-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.a .element-in-ivano {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 11px;
+  width: 83px;
+  height: 36px;
+  margin-top: 10px;
+  font-family: "Montserrat-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.a .frame-3 {
+  position: absolute;
+  top: 217px;
+  left: 180px;
+  width: 402px;
+  height: 199px;
+  display: flex;
+  flex-direction: column;
+  background-color: #eeeeee;
+}
+
+.a .text-wrapper-5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 22px;
+  font-family: "Montserrat-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.a .element-ukrainian {
+  height: 172px;
+  font-family: "Montserrat-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 12.5px;
+}
+
+.a .frame-4 {
+  position: absolute;
+  top: 427px;
+  left: 180px;
+  width: 402px;
+  height: 132px;
+  display: flex;
+  flex-direction: column;
+  background-color: #eeeeee;
+  overflow: hidden;
+}
+
+.a .work-experience {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 222px;
+  height: 22px;
+  font-family: "Montserrat-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.a .element-present {
+  margin-left: 1px;
+  height: 95px;
+  font-family: "Montserrat-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 12.5px;
+}
+
+.a .frame-5 {
+  position: absolute;
+  top: 570px;
+  left: 180px;
+  width: 402px;
+  height: 95px;
+  display: flex;
+  flex-direction: column;
+  background-color: #eeeeee;
+  overflow: hidden;
+}
+
+.a .ukrainian-native {
+  margin-left: 1px;
+  height: 73px;
+  font-family: "Montserrat-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 12.5px;
+}
+
+.a .frame-6 {
+  position: absolute;
+  top: 676px;
+  left: 180px;
+  width: 402px;
+  height: 155px;
+  display: flex;
+  flex-direction: column;
+  background-color: #eeeeee;
+  overflow: hidden;
+}
+
+.a .office-tools-MS {
+  height: 147px;
+  font-family: "Montserrat-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 12.5px;
+}
+/* Original CSS code should be injected here */
+
+.a .personal-data-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.a .contact-info {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+}
+
+.a .text-wrapper-3 a,
+.a .text-wrapper-4 a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.a .text-wrapper-3 a:hover,
+.a .text-wrapper-3 a:focus,
+.a .text-wrapper-4 a:hover,
+.a .text-wrapper-4 a:focus {
+  text-decoration: underline;
+}
+
+.a .element-ukrainian,
+.a .element-present,
+.a .ukrainian-native,
+.a .office-tools-MS {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.a .element-present a {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.a .element-present a:hover,
+.a .element-present a:focus {
+  color: #555555;
+}
