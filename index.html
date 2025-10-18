@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PDF Перегляд</title>
+  <style>
+    body{font-family:system-ui,Arial,sans-serif;background:#f8fafc;margin:20px;text-align:center;color:#1e293b}
+    h1{font-size:1.4rem;margin-bottom:1rem}
+    input,button{padding:8px 12px;border-radius:6px;border:1px solid #cbd5e1;margin:4px}
+    button{background:#2563eb;color:#fff;cursor:pointer;border:none}
+    canvas{margin-top:16px;max-width:90vw;border:1px solid #e2e8f0;background:#fff}
+  </style>
+</head>
+<body>
+  <h1>Переглядач PDF</h1>
+  <p>Виберіть PDF файл або вставте посилання.</p>
+  <div>
+    <input id="fileInput" type="file" accept="application/pdf" />
+    <input id="urlInput" type="text" placeholder="Вставте URL PDF" size="30" />
+    <button id="loadBtn">Завантажити</button>
+  </div>
+  <canvas id="pdfCanvas"></canvas>
+
+  <script src="https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js';
+
+    const fileInput = document.getElementById('fileInput');
+    const urlInput = document.getElementById('urlInput');
+    const loadBtn = document.getElementById('loadBtn');
+    const canvas = document.getElementById('pdfCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let pdfDoc = null;
+
+    fileInput.addEventListener('change', async (e)=>{
+      const file = e.target.files[0];
+      if (!file) return;
+      const buffer = await file.arrayBuffer();
+      renderPdf(buffer);
+    });
+
+    loadBtn.addEventListener('click', async ()=>{
+      const url = urlInput.value.trim();
+      if (!url) return alert('Вставте URL PDF');
+      try {
+        const res = await fetch(url);
+        const ab = await res.arrayBuffer();
+        renderPdf(ab);
+      } catch(err) {
+        alert('Помилка: ' + err.message);
+      }
+    });
+
+    async function renderPdf(data){
+      pdfDoc = await pdfjsLib.getDocument({data}).promise;
+      const page = await pdfDoc.getPage(1);
+      const viewport = page.getViewport({scale: 1.2});
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      await page.render({canvasContext: ctx, viewport}).promise;
+    }
+  </script>
+</body>
+</html>
